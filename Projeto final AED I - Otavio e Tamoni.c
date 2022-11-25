@@ -6,7 +6,7 @@ typedef struct
     char  titulo[25], cliente[25];
     int   horas;
     float valorHora, horasTotais;
-    ;
+
 } registro;
 
 main ()
@@ -14,7 +14,6 @@ main ()
 {
     int seletorMenu, seletorSubmenu;
     registro r; 
-    printf ("Boa noite");
     do
     {
         system("cls");
@@ -79,8 +78,7 @@ main ()
 
                 case 3:
                     printf("c) Exibir o projeto mais extenso\n");
-                    printf("c) Teste\n");
-                    printf("c) Testado\n");
+                    
 
                     break;
 
