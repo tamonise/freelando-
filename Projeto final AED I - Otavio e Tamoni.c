@@ -79,6 +79,9 @@ main ()
 
                 case 3:
                     printf("c) Exibir o projeto mais extenso\n");
+                    printf("c) Teste\n");
+                    printf("c) Testado\n");
+
                     break;
 
                 case 4:
