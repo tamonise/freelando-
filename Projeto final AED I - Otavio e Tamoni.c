@@ -13,8 +13,8 @@ main ()
 
 {
     int seletorMenu, seletorSubmenu;
-    registro r;
-
+    registro r; 
+    printf ("Boa noite");
     do
     {
         system("cls");
