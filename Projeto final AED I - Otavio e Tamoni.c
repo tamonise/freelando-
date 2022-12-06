@@ -1,34 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
 
 typedef struct
 {
-    char  titulo[25], cliente[25];
-    float valorHora, horas;
+    char  titulo[25], cliente[25], descricao[100];
+    float horasprevistas, horasexecutadas, preco, desconto, adicional;
+
 } Registro;
+
+
+Registro r[20];
 
 main ()
 
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int seletorMenu;
+    int i, j, seletorMenu;
     char seletorSubmenu;
-    float desconto, horasTotais;
 
     Registro r;
-    Registro registros[100][100];
+
 
     do
     {
         //system("cls");
+        printf ("---Seja bem-vindo(a) ao Freelando!---\n");
+        printf ("--Escolha a opcao desejada no menu--\n");
         printf ("1 - Inserir um novo projeto \n");
-        printf ("2 - Descubra seu valor hora ideal \n");
-        printf ("3 - Calcule o prazo de entrega do projeto \n");
-        printf ("4 - Controle o fluxo de trabalho semanal \n");
-        printf ("5 - Relat�rios \n");
-        printf ("6 - Sair do menu \n");
+        printf ("2 - Exibir projetos \n");
+        printf ("3 - Relatorios\n");
+        printf ("4 - Sair\n");
         scanf ("%d", &seletorMenu);
 
         switch (seletorMenu)
@@ -36,12 +40,12 @@ main ()
 
         case 1 :
             printf("--INSERIR NOVO PROJETO--\n");
-            printf("Digite um t�tulo para o seu projeto =\n");
+            /*printf("Digite um titulo para o seu projeto =\n");
             fflush(stdin);
             gets(r.titulo);
             printf("Digite qual o seu cliente =\n");
             gets(r.cliente);
-            printf("Digite o n�mero de horas trabalhadas no projeto= \n");
+            printf("Digite o numero de horas trabalhadas no projeto= \n");
             scanf("%f", &r.horas);
             printf("Digite o valor da sua hora para esse projeto= \n");
             scanf("%f", &r.valorHora);
@@ -58,67 +62,77 @@ main ()
                 desconto = horasTotais / desconto;
 
                 printf ("O projeto nomeado como: %s, para o cliente %s, com o total de %2f horas trabalhadas. Totalizou com desconto um valor de: %2f \n", r.titulo, r.cliente, r.horas, desconto);
-            }
+            } */
 
             break;
 
         case 2 :
-            printf ("Para calcular o seu valor hora ideal, voce precisa ");
+            /*  printf ("Para calcular o seu valor hora ideal, voce precisa preencher alguns dados\n");
+              printf ("Quantas horas voce pretende trabalhar por dia?\n");
+              scanf ("%d", &horasDia);
+              printf ("Qual o seu salario pretendido para o mes\n");
+              scanf ("%f", &salarioMes);
+              valorHoraideal = (salarioMes / 21) / horasDia;
+              printf ("Calculado baseado em 21 dias uteis! \n");
+              printf ("O seu valor hora ideal e => %2.5f \n", valorHoraideal); */
             break;
+
+
 
         case 3 :
-            break;
-
-        case 4 :
-            break;
-
-        case 5 :
 
             do
             {
-                printf("Relatorios: escolha a opcao desejada: \n");
-                printf("a - Exibir relatorio de renda semanal\n");
-                printf("b - Exibir relatorio de renda mensal\n");
-                printf("c - Exibir o projeto mais extenso\n");
-                printf("d - Exibir o projeto menos extenso\n");
-                printf("e - Exibir o projeto com maior receita\n");
-                printf("f - Exibir o projeto com menor receita\n");
-                printf("g - Voltar para o menu anterior\n");
+                printf("RELATORIOS: escolha a opcao desejada: \n");
+                printf("a - Media de horas previstas vs horas executadas\n");
+                printf("b - Projetos com mais horas prevista vs horas executadas\n");
+                printf("c - Projetos com menos horas previstas vs horas executadas\n");
+                printf("d - Media de renda semanal\n");
+                printf("e - Media de renda mensal\n");
+                printf("f - Valor hora ideal vs valor hora atual\n");
+                printf("g - Exibir o projeto com menor receita\n");
+                printf("h - Voltar para o menu anterior\n");
                 fflush(stdin);
                 scanf ("%c", &seletorSubmenu);
 
                 switch (seletorSubmenu)
                 {
                 case 'a':
-                    printf("a) Exibir relatorio de renda semanal\n");
                     break;
 
                 case 'b':
-                    printf("b) Exibir relatorio de renda mensal\n");
                     break;
 
                 case 'c':
-                    printf("c) Exibir o projeto mais extenso\n");
                     break;
 
                 case 'd':
-                    printf("d) Exibir o projeto menos extenso\n");
+
                     break;
 
                 case 'e':
-                    printf("e) Exibir o projeto com maior receita\n");
+
                     break;
 
                 case 'f':
-                    printf("f) Exibir o projeto com menor receita\n");
+
+                    break;
+
+                case 'g':
+                    break;
+
+                case 'h':
                     break;
 
                 default:
-                    printf ("Voce nao digitou uma opcao v�lida na guia relat�rios \n");
+                    printf ("Voce nao digitou uma opcao valida na guia relatorios \n");
                     break;
                 }
+            case 4 :
+            break;
+
             }
-            while (seletorSubmenu != 'f');
+            while (seletorSubmenu != 'h');
             break;
 
         default:
@@ -126,5 +140,6 @@ main ()
             break;
         }
     }
-    while (seletorMenu != 6);
+    while (seletorMenu != 4);
+
 }
